@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Forge Digital — Websites that make local businesses money</title>
+<meta name="description" content="Forge Digital builds fast, modern websites for local businesses in Conway and Central Arkansas. $500 to build, from $99/month to keep it working. Book a 15-minute call." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<meta property="og:title" content="Forge Digital — Websites that make local businesses money" />
+<meta property="og:description" content="$500 to build. From $99/month to keep it working. Conway, Arkansas." />
+<meta property="og:image" content="https://forgedigital.com/og.svg" />
+<meta property="og:url" content="https://forgedigital.com/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://forgedigital.com/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+  :root{
+    --paper:#F5F4F0; --paper-2:#EEEDE7; --card:#FFFFFF;
+    --ink:#16161A; --ink-2:#33333A; --muted:#63635E;
+    --line:#E2E0D9; --line-2:#D3D0C7;
+    --dark:#141418; --dark-2:#1C1C22; --on-dark:#F3F2EE; --on-dark-muted:#9C9C96; --on-dark-line:#2C2C33;
+    --accent:#2743E6; --accent-2:#1B31C4; --accent-soft:rgba(39,67,230,.08);
+    --display:"Bricolage Grotesque",Georgia,serif;
+    --body:"Hanken Grotesk",system-ui,sans-serif;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  img,iframe{display:block;max-width:100%}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.03;letter-spacing:-.02em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  ::selection{background:var(--accent);color:#fff}
+  :focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:6px;z-index:200}
+  .skip:focus{left:16px}
+
+  .eyebrow{font-family:var(--body);font-weight:600;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .eyebrow.on-dark{color:#9DA8FF}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-family:var(--body);font-weight:600;font-size:1rem;
+    padding:14px 26px;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .16s ease,background .16s ease,color .16s ease,border-color .16s ease}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#000;transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--line-2)}
+  .btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn-light{background:#fff;color:var(--ink)}
+  .btn-light:hover{transform:translateY(-2px)}
+  .btn-ghost-dark{background:transparent;color:var(--on-dark);border-color:var(--on-dark-line)}
+  .btn-ghost-dark:hover{border-color:var(--on-dark);transform:translateY(-2px)}
+  .arrow{transition:transform .16s ease}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:80;background:rgba(245,244,240,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;height:74px;gap:24px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
+  .brand .mk{width:26px;height:26px;background:var(--accent);border-radius:7px;position:relative;flex:0 0 auto}
+  .brand .mk::after{content:"";position:absolute;inset:8px;background:var(--paper);border-radius:2px;transform:rotate(45deg)}
+  .nav-links{display:flex;gap:30px;margin-left:20px}
+  .nav-links a{font-size:.96rem;color:var(--ink-2);font-weight:500;transition:color .14s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+  .nav-avail{font-size:.86rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .nav-avail .d{width:8px;height:8px;border-radius:50%;background:#28B463}
+  .menu-btn{display:none;width:44px;height:44px;align-items:center;justify-content:center;background:transparent;
+    border:1.5px solid var(--line-2);border-radius:100px;cursor:pointer;color:var(--ink);transition:border-color .15s ease}
+  .menu-btn:hover{border-color:var(--ink)}
+  .menu-btn .bars{display:block;width:18px;height:2px;background:currentColor;position:relative;transition:background .15s ease}
+  .menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0;width:18px;height:2px;background:currentColor;transition:transform .2s ease}
+  .menu-btn .bars::before{top:-6px}
+  .menu-btn .bars::after{top:6px}
+  .menu-btn[aria-expanded="true"] .bars{background:transparent}
+  .menu-btn[aria-expanded="true"] .bars::before{transform:translateY(6px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] .bars::after{transform:translateY(-6px) rotate(-45deg)}
+  .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);
+    border-bottom:1px solid var(--line);padding:8px 28px 26px;flex-direction:column}
+  .mobile-menu.open{display:flex}
+  .mobile-menu .mlink{padding:16px 0;font-size:1.12rem;font-weight:600;border-bottom:1px solid var(--line);color:var(--ink)}
+  .mobile-menu .btn{margin-top:20px;justify-content:center}
+  .mobile-menu .avail{margin-top:16px;font-size:.92rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .mobile-menu .avail .d{width:8px;height:8px;border-radius:50%;background:#28B463}
+
+  /* Hero */
+  .hero{padding:96px 0 80px;position:relative}
+  .hero .eyebrow{margin-bottom:24px}
+  .hero h1{font-size:clamp(2.7rem,7vw,5.6rem);letter-spacing:-.035em;max-width:15ch}
+  .hero h1 .ac{color:var(--accent)}
+  .hero .sub{font-size:clamp(1.12rem,1.7vw,1.4rem);color:var(--ink-2);max-width:56ch;margin:26px 0 0;line-height:1.5}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:36px}
+  .hero-offer{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);font-size:1.05rem;color:var(--muted)}
+  .hero-offer b{color:var(--ink);font-family:var(--display);font-weight:700}
+
+  section{position:relative}
+  .band{padding:100px 0}
+  .band.tint{background:var(--paper-2)}
+  .sec-head{max-width:640px;margin-bottom:52px}
+  .sec-head .eyebrow{margin-bottom:16px}
+  .sec-head h2{font-size:clamp(2rem,4.2vw,3.2rem);letter-spacing:-.03em}
+  .sec-head p{color:var(--muted);font-size:1.14rem;margin-top:16px}
+
+  /* Work */
+  .work-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .work-tabs button{font-family:var(--body);font-weight:600;font-size:.95rem;padding:11px 20px;border-radius:100px;
+    border:1.5px solid var(--line-2);background:transparent;color:var(--ink-2);cursor:pointer;transition:all .15s ease;display:flex;gap:9px;align-items:center}
+  .work-tabs button .k{color:var(--muted);font-weight:500;font-size:.82rem}
+  .work-tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .work-tabs button.on .k{color:rgba(255,255,255,.6)}
+  .work-tabs button:not(.on):hover{border-color:var(--ink)}
+  .stage{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 30px 60px -40px rgba(20,20,26,.35)}
+  .stage-bar{display:flex;align-items:center;gap:14px;padding:6px 8px 14px}
+  .stage-bar .info{font-weight:600}
+  .stage-bar .info small{display:block;color:var(--muted);font-weight:500;font-size:.82rem}
+  .stage-bar .controls{margin-left:auto;display:flex;gap:8px}
+  .stage-bar .controls button,.stage-bar .controls a{font-family:var(--body);font-weight:600;font-size:.86rem;padding:9px 16px;border-radius:100px;
+    border:1.5px solid var(--line-2);background:transparent;color:var(--ink);cursor:pointer;transition:all .15s ease;display:inline-flex;align-items:center;gap:7px}
+  .stage-bar .controls button:hover,.stage-bar .controls a:hover{border-color:var(--ink)}
+  .frame{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;height:600px}
+  .frame iframe{width:160%;height:160%;max-width:none;border:0;transform:scale(0.625);transform-origin:top left}
+  .frame .placeholder{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:14px;background:var(--paper-2);color:var(--muted);font-weight:500;cursor:pointer}
+  .frame .placeholder .pl{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#fff}
+  .frame:fullscreen{height:100vh;border-radius:0}
+  .frame:fullscreen iframe{width:100vw;height:100vh;transform:none}
+
+  /* What you get */
+  .get-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .get-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px 38px}
+  .get-card .eyebrow{margin-bottom:18px}
+  .get-card h3{font-size:1.7rem;letter-spacing:-.02em}
+  .get-card .price{font-family:var(--display);font-weight:700;color:var(--accent);font-size:1.3rem;margin:6px 0 22px}
+  .get-card ul{list-style:none;display:grid;gap:14px}
+  .get-card li{display:flex;gap:13px;color:var(--ink-2);font-size:1.02rem}
+  .get-card li svg{flex:0 0 auto;margin-top:4px;color:var(--accent)}
+  .get-card li b{color:var(--ink);font-weight:600}
+
+  /* Pricing (dark band) */
+  .pricing{background:var(--dark);color:var(--on-dark)}
+  .pricing .sec-head h2{color:#fff}
+  .pricing .sec-head p{color:var(--on-dark-muted)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .addons{margin-top:28px;padding-top:24px;border-top:1px solid var(--on-dark-line);display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;color:var(--on-dark-muted);font-size:.96rem}
+  .addons .addons-label{font-family:var(--display);font-weight:700;color:#fff;letter-spacing:-.01em}
+  .addons b{color:var(--on-dark);font-weight:600}
+  .addons .addons-note{color:var(--on-dark-muted);font-size:.85rem;margin-left:auto}
+  .price-card{background:var(--dark-2);border:1px solid var(--on-dark-line);border-radius:20px;padding:40px 38px;display:flex;flex-direction:column}
+  .price-card.feature{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .price-card .tag{font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted)}
+  .price-card.feature .tag{color:#9DA8FF}
+  .price-card .amt{font-family:var(--display);font-weight:800;font-size:3.6rem;line-height:1;margin:16px 0 4px;letter-spacing:-.03em}
+  .price-card .amt .per{font-family:var(--body);font-size:1.05rem;font-weight:500;color:var(--on-dark-muted);letter-spacing:0}
+  .price-card > p{color:var(--on-dark-muted);font-size:.98rem;margin-bottom:22px}
+  .price-card ul{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+  .price-card li{display:flex;gap:11px;color:var(--on-dark);font-size:.98rem}
+  .price-card li svg{flex:0 0 auto;margin-top:4px;color:#9DA8FF}
+  .price-card .foot{margin-top:auto}
+  .price-card .fine{font-size:.82rem;color:var(--on-dark-muted);margin-top:14px}
+
+  /* Who + How */
+  .who-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .who-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:34px}
+  .who-card .row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:.98rem;color:var(--muted)}
+  .who-card .row:last-child{border-bottom:0}
+  .who-card .row b{color:var(--ink);font-weight:600}
+  .who h2{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:-.03em}
+  .who p{color:var(--ink-2);font-size:1.1rem;margin-top:18px}
+  .who p b{color:var(--ink);font-weight:600}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px 30px}
+  .step .n{font-family:var(--display);font-weight:800;font-size:1.1rem;color:var(--accent)}
+  .step h3{font-size:1.4rem;margin:14px 0 10px;letter-spacing:-.02em}
+  .step p{color:var(--muted);font-size:1rem}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  details{border-bottom:1px solid var(--line);padding:24px 4px}
+  details:first-child{border-top:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:600;font-size:1.24rem;letter-spacing:-.01em;
+    display:flex;justify-content:space-between;gap:18px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{flex:0 0 auto;width:26px;height:26px;position:relative;transition:transform .2s}
+  summary .pm::before,summary .pm::after{content:"";position:absolute;background:var(--accent);left:50%;top:50%}
+  summary .pm::before{width:14px;height:2px;transform:translate(-50%,-50%)}
+  summary .pm::after{width:2px;height:14px;transform:translate(-50%,-50%);transition:transform .2s}
+  details[open] summary .pm::after{transform:translate(-50%,-50%) scaleY(0)}
+  details p{color:var(--muted);margin-top:14px;font-size:1.04rem;max-width:70ch}
+
+  /* CTA (dark band) */
+  .cta{background:var(--dark);color:var(--on-dark);text-align:center}
+  .cta h2{font-size:clamp(2.1rem,4.6vw,3.6rem);letter-spacing:-.03em;max-width:18ch;margin:0 auto;color:#fff}
+  .cta p{color:var(--on-dark-muted);font-size:1.16rem;margin:18px auto 0;max-width:48ch}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .cta .direct{margin-top:26px;font-size:.95rem;color:var(--on-dark-muted)}
+  .cta .direct a{color:var(--on-dark);border-bottom:1px solid var(--on-dark-line)}
+  .cta .direct a:hover{color:#fff;border-color:var(--on-dark)}
+
+  /* Footer */
+  footer{background:var(--dark);color:var(--on-dark-muted);border-top:1px solid var(--on-dark-line);padding:56px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:36px}
+  footer .brand{color:#fff;margin-bottom:14px}
+  footer .brand .mk::after{background:var(--dark)}
+  footer p,footer a{color:var(--on-dark-muted);font-size:.95rem;display:block;margin-bottom:9px}
+  footer a:hover{color:#fff}
+  footer h4{color:#fff;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;font-weight:600;font-family:var(--body)}
+  .foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--on-dark-line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
+
+  @media(max-width:900px){
+    .nav-links,.nav-avail{display:none}
+    .menu-btn{display:inline-flex}
+    .get-grid,.price-grid,.who-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .frame{height:440px}
+    .frame iframe{width:160%;height:160%;max-width:none;transform:scale(0.625)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    .band{padding:64px 0}.hero{padding:60px 0 56px}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Forge Digital home"><span class="mk" aria-hidden="true"></span>Forge Digital</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <span class="nav-avail"><span class="d" aria-hidden="true"></span>Taking new clients</span>
+      <a class="btn btn-dark js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span class="bars" aria-hidden="true"></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mlink" href="#work">Work</a>
+    
+    <a class="mlink" href="#pricing">Pricing</a>
+    <a class="mlink" href="#faq">FAQ</a>
+    <a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a>
+    <span class="avail"><span class="d" aria-hidden="true"></span>Taking new clients</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Web studio · Conway, Arkansas</div>
+    <h1>Websites that make local businesses <span class="ac">money.</span></h1>
+    <p class="sub">Forge Digital builds fast, modern websites for local businesses across Central Arkansas. The kind that load instantly, get found on Google, and turn visitors into calls, quotes, and bookings.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a 15-minute call <span class="arrow">→</span></a>
+      <a class="btn btn-outline" href="#work">See the work</a>
+    </div>
+    <p class="hero-offer"><b>$500</b> to build it. From <b>$99/month</b> to keep it working. That’s the whole price.</p>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="band tint" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Selected work</div>
+      <h2>Real builds you can drive right now.</h2>
+      <p>One live client build and two concept builds that show range. Each one is a real, working site: click through it, or open it fullscreen.</p>
+    </div>
+    <div class="reveal">
+      <div class="work-tabs" role="tablist" aria-label="Portfolio builds">
+        <button class="on" role="tab" aria-selected="true" data-src="/portfolio/purpose-cuts.html" data-name="Purpose Cuts" data-sub="Barbershop · live client build" data-open="/portfolio/purpose-cuts.html">Purpose Cuts <span class="k">Barbershop</span></button>
+        <button role="tab" aria-selected="false" data-src="/portfolio/mowtown.html" data-name="MowTown Lawn Co." data-sub="Lawn care · concept build" data-open="/portfolio/mowtown.html">MowTown <span class="k">Lawn care</span></button>
+        <button role="tab" aria-selected="false" data-src="/portfolio/hardin-automotive.html" data-name="Hardin Automotive" data-sub="Auto repair · spec build" data-open="/portfolio/hardin-automotive.html">Hardin Automotive <span class="k">Auto repair</span></button>
+      </div>
+      <div class="stage">
+        <div class="stage-bar">
+          <div class="info" id="stageName">Purpose Cuts<small id="stageSub">Barbershop · live client build</small></div>
+          <div class="controls">
+            <button id="fsBtn" type="button" aria-label="View fullscreen">⤢ Fullscreen</button>
+            <a id="openBtn" href="/portfolio/purpose-cuts.html" target="_blank" rel="noopener">Open site ↗</a>
+          </div>
+        </div>
+        <div class="frame" id="frame">
+          <div class="placeholder" id="framePlaceholder"><span class="pl" aria-hidden="true">▶</span>Click to load the live site</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING (merged, dark band) -->
+<section class="band pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow on-dark">Pricing</div>
+      <h2>Everything visible. This is the whole price.</h2>
+      <p>No hidden quotes, no enterprise runaround. One fair price to build it, and a plan to keep it working.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <div class="tag">The build · one-time</div>
+        <div class="amt">$500</div>
+        <p>To design and build your site. We lock the direction together before anything goes live, so you know exactly what you’re getting.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Full custom build, never a template</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Mobile-first</b> and fast, loads in about a second</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Tap-to-call and a <b>booking flow</b> on every screen</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Two rounds of revisions included</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Live in about <b>a week</b></span></li>
+        </ul>
+        <div class="foot"><a class="btn btn-light js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Get started</a><p class="fine">Billed once, up front · non-refundable.</p></div>
+      </div>
+      <div class="price-card reveal">
+        <div class="tag">Care plan · monthly</div>
+        <div class="amt">$99<span class="per"> / month</span></div>
+        <p>Keeps your site fast, online, and handled every month.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Hosting, security, and backups</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Edits and updates on request</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Kept fast and online, checked weekly</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Monthly report on calls and traffic</span></li>
+        </ul>
+        <div class="foot"><a class="btn btn-light js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a><p class="fine">Billed monthly · cancel anytime · no contract.</p></div>
+      </div>
+      <div class="price-card feature reveal">
+        <div class="tag">Premium care plan · monthly</div>
+        <div class="amt">$150<span class="per"> / month</span></div>
+        <p>Everything in the Care Plan, plus we grow your presence in local search.</p>
+        <ul>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Everything in the Care Plan</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile</b> setup and management</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Local SEO</b> to rank in nearby searches</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Priority edits</span></li>
+        </ul>
+        <div class="foot"><a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a><p class="fine">Billed monthly · cancel anytime · no contract.</p></div>
+      </div>
+    </div>
+    <div class="addons reveal">
+      <span class="addons-label">Add-ons</span>
+      <span>Logo &amp; brand kit <b>$150</b></span>
+      <span>Extra pages <b>$75 each</b></span>
+      <span>Rush build (live in ~3 days) <b>+$200</b></span>
+      <span class="addons-note">Priced per project, invoiced separately.</span>
+    </div>
+  </div>
+</section>
+<!-- WHO -->
+<section class="band" id="who">
+  <div class="wrap who-grid">
+    <div class="who-card reveal">
+      <div class="row"><span>Studio</span><b>Forge Digital</b></div>
+      <div class="row"><span>Founder</span><b>Jordan Sledge</b></div>
+      <div class="row"><span>Based</span><b>Conway, Arkansas</b></div>
+      <div class="row"><span>Live builds</span><b>3</b></div>
+      <div class="row"><span>Reply time</span><b>Same day</b></div>
+    </div>
+    <div class="who reveal">
+      <div class="eyebrow">Who builds it</div>
+      <h2>You get me, not an agency.</h2>
+      <p>Forge Digital is one person who does the whole thing: <b>Jordan Sledge</b>, right here in Conway. When you call, you get the person building your site, not an account manager reading a script.</p>
+      <p>No twelve-week timelines, no markup for a corner office, no five-figure quote. <b>$500 to build it, plans from $99 a month to keep it working</b>, and I answer the same day. Every site in the work section is one I built by hand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="band tint" id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">How it works</div>
+      <h2>From the first call to live in about a week.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h3>We talk, 15 minutes</h3><p>You tell me about your business, your customers, and what makes you the one to call. No pressure, no pitch.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>I build it, about a week</h3><p>I design and build the whole site with your real photos, services, and reviews. You get two rounds of changes.</p></div>
+      <div class="step reveal"><div class="n">03</div><h3>Live, and I keep it running</h3><p>We launch it. From there the care plan keeps it fast, updated, and working for you. Cancel whenever.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;max-width:none;margin-bottom:44px">
+      <div class="eyebrow">Questions</div>
+      <h2>The stuff people actually ask.</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>What exactly do I get for $500?<span class="pm" aria-hidden="true"></span></summary><p>A complete, custom website built for your business: mobile-first, fast, with your services, photos, reviews, tap-to-call, and a contact or booking flow. It’s built to show up on Google for local searches, and you get two rounds of revisions before it goes live.</p></details>
+      <details><summary>What do the monthly plans cover?<span class="pm" aria-hidden="true"></span></summary><p>The Care Plan ($99/mo) covers hosting, security, backups, edits when your business changes, weekly checks, and a short monthly report. The Premium Care Plan ($150/mo) adds everything in that plan plus Google Business Profile management and local SEO to help you rank in nearby searches. Both are month to month, and you can cancel anytime.</p></details>
+      <details><summary>What’s your refund policy?<span class="pm" aria-hidden="true"></span></summary><p>No. All fees are non-refundable. That’s why the build includes two rounds of revisions and we get everything right together before it goes live. If you cancel the care plan, billing simply stops for the next month.</p></details>
+      <details><summary>I already have a website. Why switch?<span class="pm" aria-hidden="true"></span></summary><p>If it’s slow, hard to use on a phone, or not bringing you business, it’s costing you quietly. I’ll look at it for free and tell you straight whether it’s worth rebuilding.</p></details>
+      <details><summary>Do you only work with certain businesses?<span class="pm" aria-hidden="true"></span></summary><p>No. Barbershop, lawn care, auto shop, and more. If you’re a local business that wants more calls and bookings, I can build for you. Take a look at the three live builds above.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA (dark band) -->
+<section class="band cta" id="book">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow on-dark" style="justify-content:center">Start here</div>
+      <h2 style="margin-top:14px">Let’s build the thing that brings you business.</h2>
+      <p>Fifteen minutes, no pressure. Tell me about your business and I’ll tell you straight if I can help. I reply the same day.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a 15-minute call</a>
+        <a class="btn btn-ghost-dark" href="tel:+15017642231">Call or text (501) 764-2231</a>
+      </div>
+      <p class="direct">Prefer email? Reach me at <a href="mailto:jordan.forgedigital@gmail.com">jordan.forgedigital@gmail.com</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><span class="mk" aria-hidden="true"></span>Forge Digital</a>
+        <p style="max-width:34ch">Websites that make local businesses money. Built by hand in Conway, Arkansas by Jordan Sledge.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:jordan.forgedigital@gmail.com">jordan.forgedigital@gmail.com</a>
+        <a href="tel:+15017642231">(501) 764-2231</a>
+        <p>Conway, Arkansas</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund.html">Refund &amp; Cancellation</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Forge Digital · Jordan Sledge · Conway, Arkansas</span>
+      <span>Built by Forge Digital</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Calendly: real links by default, upgraded to an in-page popup when the widget loads
+  document.querySelectorAll('.js-calendly').forEach(function(el){
+    el.addEventListener('click',function(ev){
+      if(window.Calendly && typeof window.Calendly.initPopupWidget==='function'){
+        ev.preventDefault();
+        window.Calendly.initPopupWidget({url:el.getAttribute('href')});
+      }
+    });
+  });
+
+  // Mobile menu
+  var mb=document.getElementById('menuBtn'), mm=document.getElementById('mobileMenu');
+  if(mb&&mm){
+    var setMenu=function(open){
+      mm.classList.toggle('open',open);
+      mb.setAttribute('aria-expanded',open?'true':'false');
+      mb.setAttribute('aria-label',open?'Close menu':'Open menu');
+    };
+    mb.addEventListener('click',function(){ setMenu(!mm.classList.contains('open')); });
+    mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ setMenu(false); }); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ setMenu(false); } });
+  }
+
+  // Scroll reveal
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else { document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');}); }
+
+  // Work console
+  var frame=document.getElementById('frame'), ph=document.getElementById('framePlaceholder');
+  var name=document.getElementById('stageName'), sub=document.getElementById('stageSub');
+  var openBtn=document.getElementById('openBtn'), tabs=[].slice.call(document.querySelectorAll('.work-tabs button'));
+  var loaded=false;
+  function load(tab){
+    var f=document.createElement('iframe');
+    f.src=tab.getAttribute('data-src'); f.loading='lazy'; f.title=tab.getAttribute('data-name')+' — live build';
+    frame.innerHTML=''; frame.appendChild(f);
+    name.childNodes[0].nodeValue=tab.getAttribute('data-name');
+    sub.textContent=tab.getAttribute('data-sub');
+    openBtn.setAttribute('href',tab.getAttribute('data-open'));
+    tabs.forEach(function(t){t.classList.remove('on');t.setAttribute('aria-selected','false');});
+    tab.classList.add('on'); tab.setAttribute('aria-selected','true');
+    loaded=true;
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){load(t);});});
+  if(ph){ ph.addEventListener('click',function(){load(tabs[0]);}); }
+  if('IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!loaded){load(tabs[0]);cio.disconnect();}});},{threshold:.3});
+    cio.observe(document.getElementById('work'));
+  }
+
+  // Fullscreen
+  var fsBtn=document.getElementById('fsBtn');
+  if(fsBtn){
+    fsBtn.addEventListener('click',function(){
+      if(!loaded){ load(tabs[0]); }
+      if(!document.fullscreenElement){
+        (frame.requestFullscreen||frame.webkitRequestFullscreen||function(){}).call(frame);
+      } else { (document.exitFullscreen||document.webkitExitFullscreen||function(){}).call(document); }
+    });
+  }
+})();
+</script>
+</body>
+</html>

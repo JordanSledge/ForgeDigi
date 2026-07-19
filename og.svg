@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F4F0"/>
+  <rect x="80" y="78" width="60" height="60" rx="15" fill="#2743E6"/>
+  <rect x="98" y="96" width="24" height="24" rx="4" fill="#F5F4F0" transform="rotate(45 110 108)"/>
+  <text x="158" y="124" font-family="Georgia, serif" font-size="38" font-weight="800" fill="#16161A">Forge Digital</text>
+  <text x="80" y="330" font-family="Georgia, serif" font-size="86" font-weight="800" fill="#16161A" letter-spacing="-3">Websites that make</text>
+  <text x="80" y="430" font-family="Georgia, serif" font-size="86" font-weight="800" fill="#2743E6" letter-spacing="-3">local businesses money.</text>
+  <text x="80" y="545" font-family="sans-serif" font-size="32" fill="#63635E">$500 to build  ·  from $99/month  ·  Conway, Arkansas</text>
+</svg>
