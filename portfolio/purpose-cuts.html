@@ -336,7 +336,7 @@ body::after{
   font-family:var(--font-script);font-size:clamp(24px,3vw,32px);color:var(--paper);line-height:1.4;
   margin-top:26px;max-width:520px;
 }
-.kaleb-copy .mission b{color:#fff;font-weight:400}
+.kaleb-copy .mission b{color:#000;font-weight:400}
 .kaleb-rating{display:flex;align-items:center;gap:14px;margin-top:26px}
 .kaleb-rating .num{font-family:var(--font-display);font-weight:800;font-size:56px;line-height:1;color:var(--paper)}
 .kaleb-rating .stars{display:flex;gap:3px;color:var(--red)}
@@ -716,6 +716,19 @@ body::after{
 .ticket-foot{font-family:var(--font-mono);font-size:11px;line-height:1.7;color:var(--ink-faint);padding:0 6px 4px}
 .ticket-foot b{color:var(--ink)}
 .ticket-wrap .btn{margin-top:22px}
+
+/* --- B&W consistency: flip dark sections to white bg / black text --- */
+.dark{background:#ffffff !important;color:#000000 !important;--line-ink:rgba(0,0,0,.14) !important}
+.dark .eyebrow{color:#666 !important}
+.dark .h2,.dark .h2 em,.dark em{color:#000 !important}
+.dark .section-head p,.dark .kaleb-copy p,.dark .bigcta p,.bigcta p{color:#3a3a3a !important}
+.dark .mission,.dark .mission b{color:#000 !important}
+.dark .kaleb-rating .num{color:#000 !important}
+.dark .kaleb-rating small{color:#666 !important}
+.dark .kaleb-rating .stars,.dark .badge svg{color:#000 !important}
+.dark .badge{color:#000 !important;border-color:#000 !important;-webkit-text-fill-color:#000 !important;background-image:none !important}
+.dark .btn,.bigcta .btn{background:#000 !important;color:#fff !important}
+.dark .btn:hover,.bigcta .btn:hover{background:#222 !important;color:#fff !important}
 </style>
 </head>
 <body>
