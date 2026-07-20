@@ -11,7 +11,7 @@
 <meta property="og:image" content="images/work-5.jpeg">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#141311">
+<meta name="theme-color" content="#000000">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -43,17 +43,17 @@
    PURPOSE CUTS — black & white brand, barber-pole red accent
    ============================================================ */
 :root{
-  --paper:#f6f4ef;
-  --paper-2:#fffefb;
-  --ink:#141311;
-  --ink-2:#211f1c;
-  --ink-soft:#4a4741;
-  --ink-faint:#8b867c;
-  --red:#c2382a;
-  --red-deep:#9c2b1f;
-  --blue:#2c4a68;          /* pole blue, stripes only */
-  --line:#e2ddd2;
-  --line-ink:rgba(246,244,239,.14);
+  --paper:#ffffff;
+  --paper-2:#ffffff;
+  --ink:#000000;
+  --ink-2:#141414;
+  --ink-soft:#444444;
+  --ink-faint:#767676;
+  --red:#000000;
+  --red-deep:#1a1a1a;
+  --blue:#000000;          /* pole blue, stripes only */
+  --line:#dddddd;
+  --line-ink:rgba(255,255,255,.14);
   --font-display:"Big Shoulders Display","Arial Narrow",sans-serif;
   --font-script:"Yellowtail",cursive;
   --font-body:"Archivo",-apple-system,"Segoe UI",sans-serif;
@@ -116,7 +116,7 @@ body::after{
   position:fixed;top:0;left:0;right:0;z-index:800;
   display:flex;align-items:center;justify-content:space-between;
   padding:12px clamp(16px,4vw,40px);
-  background:rgba(246,244,239,.86);
+  background:rgba(255,255,255,.86);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
   transition:transform .4s var(--ease-out);
@@ -155,7 +155,7 @@ body::after{
   .nav-links{
     position:fixed;inset:0;top:0;z-index:-1;
     flex-direction:column;justify-content:center;gap:6px;
-    background:rgba(246,244,239,.98);
+    background:rgba(255,255,255,.98);
     opacity:0;pointer-events:none;transition:opacity .35s ease;
   }
   .nav-links.open{opacity:1;pointer-events:auto}
@@ -261,9 +261,9 @@ body::after{
 .h2 em{font-family:var(--font-script);font-style:normal;font-weight:400;text-transform:none;color:var(--red);font-size:.9em;letter-spacing:0}
 .section-head p{max-width:560px;margin-top:16px;color:var(--ink-soft);line-height:1.7}
 .dark{background:var(--ink);color:var(--paper)}
-.dark .eyebrow{color:rgba(246,244,239,.6)}
+.dark .eyebrow{color:rgba(255,255,255,.6)}
 .dark .h2{color:var(--paper)}
-.dark .section-head p{color:rgba(246,244,239,.66)}
+.dark .section-head p{color:rgba(255,255,255,.66)}
 
 /* scroll reveal */
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
@@ -328,20 +328,20 @@ body::after{
 .badge{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  border:1px solid var(--line-ink);border-radius:40px;padding:8px 16px;color:rgba(246,244,239,.75);
+  border:1px solid var(--line-ink);border-radius:40px;padding:8px 16px;color:rgba(255,255,255,.75);
 }
 .badge svg{width:13px;height:13px;color:var(--red);flex:none}
-.kaleb-copy p{color:rgba(246,244,239,.72);line-height:1.8;margin-top:18px;max-width:540px}
+.kaleb-copy p{color:rgba(255,255,255,.72);line-height:1.8;margin-top:18px;max-width:540px}
 .kaleb-copy .mission{
   font-family:var(--font-script);font-size:clamp(24px,3vw,32px);color:var(--paper);line-height:1.4;
   margin-top:26px;max-width:520px;
 }
-.kaleb-copy .mission b{color:var(--red);font-weight:400}
+.kaleb-copy .mission b{color:#fff;font-weight:400}
 .kaleb-rating{display:flex;align-items:center;gap:14px;margin-top:26px}
 .kaleb-rating .num{font-family:var(--font-display);font-weight:800;font-size:56px;line-height:1;color:var(--paper)}
 .kaleb-rating .stars{display:flex;gap:3px;color:var(--red)}
 .kaleb-rating .stars svg{width:16px;height:16px}
-.kaleb-rating small{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,244,239,.55);margin-top:4px}
+.kaleb-rating small{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px}
 
 /* ============================================================
    GALLERY
@@ -400,7 +400,7 @@ body::after{
   font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:.1em;text-transform:uppercase;
   display:flex;justify-content:space-between;align-items:center;
 }
-.ledger-head span{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:rgba(246,244,239,.6);font-weight:400}
+.ledger-head span{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.6);font-weight:400}
 .ledger ul{list-style:none}
 .ledger li{
   display:flex;gap:14px;align-items:flex-start;padding:15px 22px;border-bottom:1px dashed var(--line);
@@ -467,7 +467,7 @@ body::after{
    ============================================================ */
 .bigcta{text-align:center;position:relative;overflow:hidden}
 .bigcta .h2{font-size:clamp(48px,8.5vw,110px)}
-.bigcta p{max-width:430px;margin:18px auto 0;color:rgba(246,244,239,.66)}
+.bigcta p{max-width:430px;margin:18px auto 0;color:rgba(255,255,255,.66)}
 .bigcta .btn{margin-top:32px;min-height:56px;padding:16px 44px;font-size:14px;background:var(--paper);color:var(--ink)}
 .bigcta .btn:hover{background:var(--red);color:var(--paper)}
 .bigcta::before,.bigcta::after{
@@ -483,13 +483,13 @@ body::after{
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:36px;justify-content:space-between;align-items:flex-start}
 .footer .brand-name{color:var(--paper);font-size:24px}
 .footer-col h4{font-family:var(--font-mono);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--red);margin-bottom:14px;font-weight:500}
-.footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(246,244,239,.66);padding:5px 0}
+.footer-col a,.footer-col p{display:block;font-size:14px;color:rgba(255,255,255,.66);padding:5px 0}
 .footer-col a:hover{color:var(--paper)}
-.footer-base{max-width:1200px;margin:38px auto 0;padding-top:22px;border-top:1px solid var(--line-ink);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:rgba(246,244,239,.4)}
+.footer-base{max-width:1200px;margin:38px auto 0;padding-top:22px;border-top:1px solid var(--line-ink);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.4)}
 .socials{display:flex;gap:10px;margin-top:18px}
 .socials a{
   width:46px;height:46px;border:1.5px solid var(--line-ink);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;color:rgba(246,244,239,.75);
+  display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);
   transition:border-color .25s,color .25s,transform .25s;
 }
 .socials a:hover{border-color:var(--red);color:var(--red);transform:translateY(-3px)}
@@ -498,7 +498,7 @@ body::after{
 /* mobile sticky bar */
 .mobile-bar{
   position:fixed;bottom:0;left:0;right:0;z-index:700;padding:10px 14px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(246,244,239,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border-top:2px solid var(--ink);display:none;
 }
 .mobile-bar-row{display:flex;gap:10px}
@@ -547,9 +547,9 @@ body::after{
   border:2px solid var(--ink);
   background:repeating-linear-gradient(
     -32deg,
-    #fffefb 0 10px,
+    #ffffff 0 10px,
     var(--red) 10px 20px,
-    #fffefb 20px 30px,
+    #ffffff 20px 30px,
     var(--blue) 30px 40px
   );
   background-size:100% 57px;
@@ -842,6 +842,27 @@ body::after{
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
         Add-ons available on every service. Choose them when you book.
       </div>
+      <style>
+        .svc-addons{max-width:660px;margin:34px auto 0;text-align:left}
+        .svc-addons .addons-title{font-family:var(--font-display);font-size:23px;letter-spacing:.01em;margin:0}
+        .svc-addons .addons-sub{color:var(--ink-faint);font-size:14px;margin:6px 0 14px}
+        .addons-list{list-style:none;padding:0;margin:0;border-top:2px solid var(--ink)}
+        .addons-list li{display:flex;justify-content:space-between;gap:12px;padding:12px 4px;border-bottom:1px dashed var(--line);font-family:var(--font-mono);font-size:14px;color:var(--ink)}
+        .addons-list li span:last-child{font-weight:700;white-space:nowrap}
+      </style>
+      <div class="svc-addons rv">
+        <h3 class="addons-title">Add-ons</h3>
+        <p class="addons-sub">Stack any of these onto your service — just pick them when you book.</p>
+        <ul class="addons-list">
+          <li><span>Lather &amp; Hot Towel</span><span>$15</span></li>
+          <li><span>Foil Shaver</span><span>$7</span></li>
+          <li><span>Spray Enhancements</span><span>$5</span></li>
+          <li><span>Straight Razor</span><span>$5</span></li>
+          <li><span>Shampoo</span><span>$5</span></li>
+          <li><span>Beard Color Enhancements</span><span>$5</span></li>
+          <li><span>Pencil Enhancements</span><span>$5</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -960,7 +981,7 @@ body::after{
               Cash
             </span>
             <span class="chip">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#6d1ed4"><path d="M13.6 2h-3.2v2.6H5.2v3h8.1L5.2 15.9V19h5.2v3h3.2v-3h5.2v-3h-8.1l8.1-8.3V4.6h-5.2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#000000"><path d="M13.6 2h-3.2v2.6H5.2v3h8.1L5.2 15.9V19h5.2v3h3.2v-3h5.2v-3h-8.1l8.1-8.3V4.6h-5.2z"/></svg>
               Zelle
             </span>
             <span class="chip">
@@ -1016,27 +1037,30 @@ body::after{
           <h2 class="h2" style="font-size:clamp(30px,4vw,48px)">Appointment <em>only.</em></h2>
           <p>Kaleb's book changes week to week, so exact openings show when you book. A typical day at the chair looks like this:</p>
           <div class="hours-sample">
-            <div class="hours-row"><span>Morning block</span><span>10:00 AM – 1:30 PM</span></div>
-            <div class="hours-row"><span>Break</span><span>1:30 PM – 2:30 PM</span></div>
-            <div class="hours-row"><span>Afternoon block</span><span>2:30 PM – 7:00 PM</span></div>
-            <div class="hours-row"><span>Days off</span><span>Vary · check the book</span></div>
+            <div class="hours-row"><span>Monday</span><span>Closed</span></div>
+            <div class="hours-row"><span>Tuesday</span><span>8:00 AM – 1:00 PM</span></div>
+            <div class="hours-row"><span>Wednesday</span><span style="text-align:right">10:00 AM – 7:00 PM<small style="display:block;color:var(--ink-faint);font-size:10.5px;letter-spacing:0">Break 1:30 – 2:30 PM</small></span></div>
+            <div class="hours-row"><span>Thursday</span><span>10:00 AM – 3:00 PM</span></div>
+            <div class="hours-row"><span>Friday</span><span style="text-align:right">10:00 AM – 7:00 PM<small style="display:block;color:var(--ink-faint);font-size:10.5px;letter-spacing:0">Break 1:30 – 2:30 PM</small></span></div>
+            <div class="hours-row"><span>Saturday</span><span style="text-align:right">10:00 AM – 5:00 PM<small style="display:block;color:var(--ink-faint);font-size:10.5px;letter-spacing:0">Break 1:00 – 2:00 PM</small></span></div>
+            <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
           </div>
         </div>
         <div class="map-card rv rv-d1" role="img" aria-label="Stylized map showing 690 Ingram Street in Conway, Arkansas">
           <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="340" fill="#efece4"/>
-            <g stroke="#ddd8cb" stroke-width="10" stroke-linecap="round">
+            <rect width="400" height="340" fill="#f2f2f2"/>
+            <g stroke="#d8d8d8" stroke-width="10" stroke-linecap="round">
               <path d="M-10 80 H410"/><path d="M-10 170 H410"/><path d="M-10 260 H410"/>
               <path d="M80 -10 V350"/><path d="M220 -10 V350"/><path d="M330 -10 V350"/>
             </g>
-            <g stroke="#e6e2d6" stroke-width="3">
+            <g stroke="#e8e8e8" stroke-width="3">
               <path d="M-10 125 H410"/><path d="M-10 215 H410"/><path d="M150 -10 V350"/><path d="M275 -10 V350"/>
             </g>
-            <path d="M220 -10 V350" stroke="#c2382a" stroke-width="4" opacity=".5"/>
-            <text x="230" y="330" fill="#c2382a" font-family="monospace" font-size="10" letter-spacing="2" opacity=".8" transform="rotate(-90 230 330)">INGRAM STREET</text>
-            <text x="16" y="72" fill="#a49e8f" font-family="monospace" font-size="9" letter-spacing="2">OAK ST</text>
-            <text x="16" y="162" fill="#a49e8f" font-family="monospace" font-size="9" letter-spacing="2">PRINCE ST</text>
-            <text x="16" y="252" fill="#a49e8f" font-family="monospace" font-size="9" letter-spacing="2">COLLEGE AVE</text>
+            <path d="M220 -10 V350" stroke="#000000" stroke-width="4" opacity=".5"/>
+            <text x="230" y="330" fill="#000000" font-family="monospace" font-size="10" letter-spacing="2" opacity=".8" transform="rotate(-90 230 330)">INGRAM STREET</text>
+            <text x="16" y="72" fill="#777777" font-family="monospace" font-size="9" letter-spacing="2">OAK ST</text>
+            <text x="16" y="162" fill="#777777" font-family="monospace" font-size="9" letter-spacing="2">PRINCE ST</text>
+            <text x="16" y="252" fill="#777777" font-family="monospace" font-size="9" letter-spacing="2">COLLEGE AVE</text>
             <circle cx="220" cy="150" r="26" fill="rgba(194,56,42,.08)"/>
             <circle cx="220" cy="150" r="46" fill="none" stroke="rgba(194,56,42,.16)" stroke-width="1"/>
           </svg>
