@@ -1543,5 +1543,17 @@ modal.addEventListener("keydown", function(e){
 });
 })();
 </script>
+
+<script>
+/* Route every "Book" button to Kaleb's live Booksy page */
+(function(){
+  var BOOKSY='https://booksy.com/en-us/664939_purpose-cuts-kaleb-williams_barber-shop_14150_conway#ba_s=seo';
+  document.addEventListener("click", function(e){
+    var t = e.target.closest && e.target.closest("[data-book]");
+    if(t){ e.preventDefault(); e.stopImmediatePropagation();
+      window.open(BOOKSY, "_blank", "noopener"); }
+  }, true);
+})();
+</script>
 </body>
 </html>
