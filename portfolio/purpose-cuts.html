@@ -1544,14 +1544,29 @@ modal.addEventListener("keydown", function(e){
 })();
 </script>
 
+<!-- Booksy booking widget — Purpose Cuts / Kaleb Williams (business id 664939).
+     Mounted off-screen: the widget injects a .booksy-widget-button here, and the site's
+     own styled "Book" buttons proxy-click it to open Booksy as a seamless in-page overlay. -->
+<div id="booksy-mount" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden">
+  <script type="text/javascript" src="https://booksy.com/widget/code.js?id=664939&country=us&lang=en-US"></script>
+</div>
 <script>
-/* Route every "Book" button to Kaleb's live Booksy page */
+/* Route every "Book" button to Kaleb's Booksy. Opens the Booksy widget as an in-page
+   overlay (no new tab). Falls back to opening his Booksy page in a new tab only if the
+   widget script hasn't finished loading yet. */
 (function(){
   var BOOKSY='https://booksy.com/en-us/664939_purpose-cuts-kaleb-williams_barber-shop_14150_conway#ba_s=seo';
+  function openBooksy(){
+    var btn = document.querySelector('#booksy-mount .booksy-widget-button')
+           || document.querySelector('.booksy-widget-button');
+    if(btn){ btn.click(); return true; }
+    return false;
+  }
   document.addEventListener("click", function(e){
     var t = e.target.closest && e.target.closest("[data-book]");
-    if(t){ e.preventDefault(); e.stopImmediatePropagation();
-      window.open(BOOKSY, "_blank", "noopener"); }
+    if(!t) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    if(!openBooksy()){ window.open(BOOKSY, "_blank", "noopener"); }
   }, true);
 })();
 </script>
