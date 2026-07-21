@@ -1519,29 +1519,33 @@ modal.addEventListener("keydown", function(e){
 })();
 </script>
 
-<!-- Booksy booking widget — Purpose Cuts / Kaleb Williams (business id 664939).
-     Mounted off-screen: the widget injects a .booksy-widget-button here, and the site's
-     own styled "Book" buttons proxy-click it to open Booksy as a seamless in-page overlay. -->
-<div id="booksy-mount" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden">
-  <script type="text/javascript" src="https://booksy.com/widget/code.js?id=664939&country=us&lang=en-US"></script>
-</div>
+<!-- Cal.com booking — Purpose Cuts / Kaleb Williams (cal.com/purposecuts).
+     Hidden trigger wired to Cal.com; the site's own styled "Book" buttons proxy-click it
+     to open Cal.com as a seamless in-page overlay (no new tab). -->
+<button id="cal-trigger" data-cal-link="purposecuts" data-cal-namespace="purposecuts"
+        data-cal-config='{"layout":"month_view"}'
+        aria-hidden="true" tabindex="-1"
+        style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden"></button>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "purposecuts", {origin:"https://cal.com"});
+  Cal.ns.purposecuts("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns.purposecuts("preload", {calLink:"purposecuts"});
+</script>
 <script>
-/* Route every "Book" button to Kaleb's Booksy. Opens the Booksy widget as an in-page
-   overlay (no new tab). Falls back to opening his Booksy page in a new tab only if the
-   widget script hasn't finished loading yet. */
+/* Route every "Book" button to Kaleb's Cal.com. Opens the Cal.com booking as a seamless
+   in-page overlay by proxy-clicking the hidden Cal trigger above. iOS/mobile fallback: if a
+   tap lands before Cal's async embed.js has finished loading (slow cellular), open the
+   booking page in a new tab so the tap is never a dead end. */
 (function(){
-  var BOOKSY='https://booksy.com/en-us/664939_purpose-cuts-kaleb-williams_barber-shop_14150_conway#ba_s=seo';
-  function openBooksy(){
-    var btn = document.querySelector('#booksy-mount .booksy-widget-button')
-           || document.querySelector('.booksy-widget-button');
-    if(btn){ btn.click(); return true; }
-    return false;
-  }
+  var trigger = document.getElementById('cal-trigger');
+  var CAL_URL = 'https://cal.com/purposecuts';
   document.addEventListener("click", function(e){
     var t = e.target.closest && e.target.closest("[data-book]");
-    if(!t) return;
+    if(!t || t.id==='cal-trigger') return;
     e.preventDefault(); e.stopImmediatePropagation();
-    if(!openBooksy()){ window.open(BOOKSY, "_blank", "noopener"); }
+    if(document.querySelector('iframe[src*="cal.com"]')){ trigger.click(); }
+    else { window.open(CAL_URL, "_blank", "noopener"); }
   }, true);
 })();
 </script>
