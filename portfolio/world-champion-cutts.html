@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Champion Cutts Barber Shop · Little Rock, AR</title>
+<meta name="description" content="Little Rock's championship barbershop, across from Philander Smith College. Fades, classic cuts, beard work, and straight-razor shaves. Book on Booksy. 4.9 stars, 200+ reviews.">
+<meta name="robots" content="noindex, nofollow">
+<!-- Forge Digital design concept / pitch mockup for World Champion Cutts Barber Shop (real Little Rock business). Services, prices, hours, address, and barbers from public Booksy/listings. Photos are stock placeholders. noindex so it does not compete with the real business in search. -->
+<meta name="theme-color" content="#181310">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#181310; --panel:#221A15; --panel-2:#2B211A; --raise:#332619;
+  --cream:#F1E7D6; --cream-2:rgba(241,231,214,.72); --cream-3:rgba(241,231,214,.5);
+  --oxblood:#A23C2D; --oxblood-dk:#872F22; --brass:#C79A54; --brass-dk:#A97F3C;
+  --line:rgba(241,231,214,.14); --line-2:rgba(241,231,214,.08);
+  --font-display:"Big Shoulders Display",Impact,sans-serif; --font-body:"Familjen Grotesk",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1); --wrap:1220px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.pole{height:6px;background:repeating-linear-gradient(115deg,var(--oxblood) 0 14px,var(--cream) 14px 28px,var(--brass) 28px 42px)}
+.eyebrow{font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--brass)}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;line-height:.94;letter-spacing:.005em;text-transform:uppercase;color:var(--cream)}
+h2{font-size:clamp(34px,6vw,68px)}
+p{color:var(--cream-2)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:15px 30px;font-family:var(--font-body);font-weight:600;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border:none;border-radius:1px;transition:transform .25s var(--ease),background .25s,color .25s}
+.btn-primary{background:var(--oxblood);color:var(--cream)}
+.btn-primary:hover{background:var(--oxblood-dk);transform:translateY(-2px)}
+.btn-brass{background:var(--brass);color:#20180E}
+.btn-brass:hover{background:var(--brass-dk);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--cream);background:rgba(241,231,214,.06)}
+
+/* emblem */
+.emblem{width:46px;height:46px;border-radius:50%;border:2px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:19px;color:var(--brass);flex:none;letter-spacing:.02em}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(20px,5vw,48px);background:rgba(24,19,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-2);transition:transform .4s var(--ease)}
+.nav.hide{transform:translateY(-100%)}
+.brand{display:flex;align-items:center;gap:13px}
+.brand .txt b{font-family:var(--font-display);font-weight:900;font-size:22px;letter-spacing:.02em;line-height:1;display:block;text-transform:uppercase}
+.brand .txt small{font-size:9px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--brass)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-2);position:relative;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:2px;background:var(--oxblood);transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
+.nav-links a:hover{color:var(--cream)}.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav .btn{min-height:44px;padding:11px 22px}
+.burger{display:none;width:46px;height:46px;flex-direction:column;justify-content:center;align-items:center;gap:5px;background:none;border:none;cursor:pointer;z-index:210}
+.burger span{width:24px;height:2px;background:var(--cream);transition:transform .3s var(--ease),opacity .2s}
+
+/* MOBILE MENU (opaque, correct) */
+.mmenu{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;
+  transform:translateY(-100%);transition:transform .45s var(--ease);visibility:hidden}
+.mmenu.open{transform:translateY(0);visibility:visible}
+.mmenu a:not(.btn){font-family:var(--font-display);font-size:38px;font-weight:800;text-transform:uppercase;color:var(--cream);padding:8px}
+.mmenu .btn{margin-top:22px}
+
+/* HERO */
+.hero{position:relative;padding:132px 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:end}
+.hero-l{padding-bottom:70px}
+.hero h1{font-size:clamp(62px,12vw,150px);font-weight:900;letter-spacing:.01em}
+.hero h1 .yr{color:var(--oxblood)}
+.hero-sub{font-size:clamp(16px,1.6vw,19px);max-width:42ch;margin:22px 0 32px;color:var(--cream-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.hero-meta div{font-size:12px;color:var(--cream-3);text-transform:uppercase;letter-spacing:.1em}
+.hero-meta strong{display:block;font-family:var(--font-display);font-size:22px;color:var(--cream);font-weight:700;margin-top:5px;letter-spacing:.02em}
+.hero-meta .star{color:var(--brass)}
+.hero-r{position:relative}
+.hero-r img{width:100%;height:min(74vh,640px);object-fit:cover;object-position:center 30%}
+.hero-tag{position:absolute;top:24px;left:24px;background:var(--oxblood);color:var(--cream);font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px}
+
+/* MARQUEE */
+.strip{background:var(--cream);color:var(--bg);overflow:hidden;padding:15px 0}
+.strip-track{display:flex;gap:40px;white-space:nowrap;width:max-content;animation:scroll 30s linear infinite;font-family:var(--font-display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.03em}
+.strip-track span{display:flex;align-items:center;gap:40px}.strip-track em{color:var(--oxblood);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* SECTION */
+.section{padding:clamp(72px,10vw,124px) 0}
+.section-head{max-width:660px;margin-bottom:52px}
+.section-head h2{margin:16px 0}
+.section-head p{font-size:17px}
+
+/* SERVICES */
+.services{background:var(--panel)}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 56px}
+.svc{display:flex;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid var(--line-2)}
+.svc .n{font-family:var(--font-display);font-weight:700;font-size:23px;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+.svc .dots{flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-5px)}
+.svc .d{display:block;font-family:var(--font-body);font-size:13px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--cream-3);margin-top:3px}
+.svc .p{font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--brass);white-space:nowrap}
+.svc-note{margin-top:38px;font-size:14px;color:var(--cream-3)}
+.svc-note b{color:var(--brass)}
+
+/* SHOP */
+.shop-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,6vw,72px);align-items:center}
+.shop-img{position:relative}
+.shop-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.shop-badge{position:absolute;bottom:-20px;right:-20px;width:130px;height:130px;border-radius:50%;background:var(--oxblood);color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--font-display);text-transform:uppercase;line-height:1;box-shadow:0 20px 40px -18px rgba(0,0,0,.7)}
+.shop-badge b{font-size:40px;font-weight:900}.shop-badge span{font-size:10px;letter-spacing:.16em;margin-top:6px;color:var(--brass)}
+.shop-txt h2{margin:16px 0 22px}
+.shop-txt p+p{margin-top:16px}
+
+/* BARBERS */
+.barbers{background:var(--panel)}
+.barber-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.barber{background:var(--bg);border:1px solid var(--line-2);overflow:hidden;transition:transform .3s var(--ease)}
+.barber:hover{transform:translateY(-6px)}
+.barber img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.35) contrast(1.03)}
+.barber-body{padding:22px 24px 26px}
+.barber-body h3{font-size:26px}
+.barber-body .role{color:var(--brass);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:6px 0 12px;font-weight:600}
+.barber-body p{font-size:14px}
+.barber-body .yrs{margin-top:14px;font-family:var(--font-display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-3)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:12px}
+.gallery-grid a{overflow:hidden;position:relative}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2);transition:transform .5s var(--ease),filter .4s}
+.gallery-grid a:hover img{transform:scale(1.06);filter:grayscale(0)}
+.g-tall{grid-row:span 2}.g-wide{grid-column:span 2}
+
+/* REVIEWS */
+.reviews{background:var(--panel-2);text-align:center}
+.stars{color:var(--brass);font-size:22px;letter-spacing:3px}
+.rev-agg{font-family:var(--font-display);font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.03em;margin:14px 0 50px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left}
+.rev{background:var(--bg);border:1px solid var(--line-2);padding:30px}
+.rev .stars{font-size:15px;letter-spacing:2px}
+.rev p{font-size:17px;color:var(--cream);margin:16px 0 20px;line-height:1.5}
+.rev cite{font-style:normal;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-3)}
+
+/* VISIT */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,90px);margin-top:16px}
+.hours-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line-2);font-size:15px}
+.hours-row span:first-child{color:var(--cream-3);text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:500}
+.hours-row b{color:var(--cream);font-weight:600}
+.hours-row.today b,.hours-row.today span{color:var(--brass)}
+.visit-info .big{font-family:var(--font-display);font-weight:700;font-size:30px;text-transform:uppercase;color:var(--cream);margin:6px 0 18px;line-height:1.05;letter-spacing:.02em}
+.visit-info p{color:var(--cream-2);margin-bottom:14px}
+.visit-info a.line{color:var(--brass)}
+.walkin{margin-top:22px;padding:16px 20px;background:var(--panel);border:1px solid var(--line-2);font-size:14px;color:var(--cream-2)}
+.walkin b{display:block;font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:5px}
+.visit .btn{margin-top:24px}
+
+/* FOOTER */
+footer{background:#120E0B;color:var(--cream-3);padding:58px 0 32px}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:34px;padding-bottom:38px;border-bottom:1px solid var(--line-2)}
+.foot-brand{display:flex;align-items:center;gap:13px;margin-bottom:14px}
+.foot-brand b{font-family:var(--font-display);font-weight:900;font-size:24px;text-transform:uppercase;color:var(--cream)}
+.foot-col h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-3);margin-bottom:15px}
+.foot-col a{display:block;color:var(--cream-2);padding:5px 0;font-size:14px;transition:color .2s}
+.foot-col a:hover{color:var(--brass)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12.5px}
+.foot-bottom a{color:var(--brass)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .nav-links,.nav-cta .btn{display:none}
+  .burger{display:flex}
+  .hero-grid,.shop-grid,.visit-grid{grid-template-columns:1fr;gap:36px}
+  .hero-l{padding-bottom:36px}
+  .hero-r img{height:56vh}
+  .svc-grid,.barber-grid,.rev-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+  .g-tall{grid-row:span 1}
+  .shop-badge{width:104px;height:104px;right:0}
+}
+@media(max-width:520px){
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px}
+  .hero-meta{flex-wrap:wrap;gap:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="pole"></div>
+<header class="nav" id="nav">
+  <a href="#top" class="brand"><span class="emblem">WC</span><span class="txt"><b>World Champion Cutts</b><small>Barber Shop · Little Rock</small></span></a>
+  <nav class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#shop">The Shop</a>
+    <a href="#barbers">Barbers</a>
+    <a href="#visit">Visit</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="#visit" class="btn btn-brass">Book a Chair</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <a href="#services">Services</a>
+  <a href="#shop">The Shop</a>
+  <a href="#barbers">Barbers</a>
+  <a href="#visit">Visit</a>
+  <a href="#visit" class="btn btn-brass">Book a Chair</a>
+</div>
+
+<main id="top">
+
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div class="hero-l">
+      <span class="eyebrow">Little Rock, Arkansas</span>
+      <h1>Look like<br>a <span class="yr">champion.</span></h1>
+      <p class="hero-sub">Little Rock's championship barbershop, right across from Philander Smith. Fades, classic cuts, beard work, and crisp straight-razor lineups. Fifteen years, and a chair with your name on it.</p>
+      <div class="hero-cta">
+        <a href="#visit" class="btn btn-brass">Book a Chair</a>
+        <a href="#services" class="btn btn-ghost">See Services</a>
+      </div>
+      <div class="hero-meta">
+        <div>Rated<strong><span class="star">★</span> 4.9 · 200+</strong></div>
+        <div>Booking<strong>On Booksy</strong></div>
+        <div>Open<strong>Tue – Sat, 9–7</strong></div>
+      </div>
+    </div>
+    <div class="hero-r">
+      <span class="hero-tag">15 Years</span>
+      <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=80" alt="A fresh cut at World Champion Cutts">
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>Skin Fades <em>✂</em> Straight-Razor Lineups <em>✂</em> Beard Work <em>✂</em> Tapers <em>✂</em> Classic Cuts <em>✂</em> Kids &amp; Seniors <em>✂</em></span>
+    <span>Skin Fades <em>✂</em> Straight-Razor Lineups <em>✂</em> Beard Work <em>✂</em> Tapers <em>✂</em> Classic Cuts <em>✂</em> Kids &amp; Seniors <em>✂</em></span>
+  </div>
+</div>
+
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">The Board</span><h2>Pick your service. Book your chair.</h2><p>Real prices, straight from Booksy. Book any service online in about thirty seconds, and pay cash at the chair.</p></div>
+    <div class="svc-grid">
+      <div class="svc reveal"><span class="n">Haircut &amp; Beard<span class="d">Fresh cut plus full beard work · 45 min</span></span><span class="dots"></span><span class="p">$45</span></div>
+      <div class="svc reveal"><span class="n">Kid's Haircut<span class="d">12 &amp; under · 15 min</span></span><span class="dots"></span><span class="p">$25</span></div>
+      <div class="svc reveal"><span class="n">Beard<span class="d">Shaped, lined, and oiled · 15 min</span></span><span class="dots"></span><span class="p">$30</span></div>
+      <div class="svc reveal"><span class="n">Line &amp; Beard<span class="d">Beard plus a crisp lineup · 20 min</span></span><span class="dots"></span><span class="p">$30</span></div>
+      <div class="svc reveal"><span class="n">Edge Up (w/ razor)<span class="d">Quick, clean razor lineup · 15 min</span></span><span class="dots"></span><span class="p">$15</span></div>
+      <div class="svc reveal"><span class="n">Straight Razor Shave<span class="d">Full hot-towel straight razor · 30 min</span></span><span class="dots"></span><span class="p">$45</span></div>
+      <div class="svc reveal"><span class="n">Head Shave &amp; Beard<span class="d">The full treatment · 45 min</span></span><span class="dots"></span><span class="p">$60</span></div>
+      <div class="svc reveal"><span class="n">Eyebrow Shaping<span class="d">Cleaned up and shaped · 15 min</span></span><span class="dots"></span><span class="p">$20</span></div>
+    </div>
+    <p class="svc-note">Also on the board: <b>Head Shave $50 · Shampoo $25 · Facial $30.</b> Book any service on Booksy. Cash only at the chair.</p>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="wrap shop-grid">
+    <div class="shop-img reveal">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=80" alt="Inside World Champion Cutts">
+      <div class="shop-badge"><b>15</b><span>Years strong</span></div>
+    </div>
+    <div class="shop-txt reveal">
+      <span class="eyebrow">The Shop</span>
+      <h2>A Little Rock institution.</h2>
+      <p>World Champion Cutts has been lining up the Southside for fifteen years, right across the street from historic Philander Smith College.</p>
+      <p>Nearly five stars, hundreds of reviews, and a chair that stays full. Book on Booksy, pay cash, and leave looking like a champion.</p>
+      <a href="#barbers" class="btn btn-ghost" style="margin-top:24px">Meet the Barbers</a>
+    </div>
+  </div>
+</section>
+
+<section class="section barbers" id="barbers">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">The Chairs</span><h2>The hands behind the fade.</h2></div>
+    <div class="barber-grid">
+      <!-- [NEEDS] confirm barber roles + real photos; names are real (from listings) -->
+      <article class="barber reveal">
+        <img src="https://images.unsplash.com/photo-1593702295094-aea22597af65?auto=format&fit=crop&w=700&q=80" alt="Barber VJ">
+        <div class="barber-body"><h3>VJ</h3><div class="role">Barber</div><p>Fades, tapers, and lineups so crisp they look drawn on. Ask for VJ when you want it exact.</p><div class="yrs">Book on Booksy</div></div>
+      </article>
+      <article class="barber reveal">
+        <img src="https://images.unsplash.com/photo-1605497787865-e6d4762b386f?auto=format&fit=crop&w=700&q=80" alt="Barber Astate">
+        <div class="barber-body"><h3>Astate</h3><div class="role">Barber</div><p>Classic cuts and full beard work, smooth and steady in the chair, every time.</p><div class="yrs">Book on Booksy</div></div>
+      </article>
+      <article class="barber reveal">
+        <img src="https://images.unsplash.com/photo-1657105052497-f996284ffff8?auto=format&fit=crop&w=700&q=80" alt="Ms. Shears">
+        <div class="barber-body"><h3>Ms. Shears</h3><div class="role">Barber &amp; Stylist</div><p>The shop's finishing touch. Cuts, styles, and the details other chairs miss.</p><div class="yrs">Book on Booksy</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head reveal"><span class="eyebrow">The Work</span><h2>Fresh off the chair.</h2></div>
+  <div class="gallery-grid">
+    <a class="g-tall reveal" href="#"><img src="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=800&q=80" alt="Fresh fade"></a>
+    <a class="g-wide reveal" href="#"><img src="https://images.unsplash.com/photo-1635273051937-a0ddef9573b6?auto=format&fit=crop&w=1000&q=80" alt="Barber at work"></a>
+    <a class="reveal" href="#"><img src="https://images.unsplash.com/photo-1678356164573-9a534fe43958?auto=format&fit=crop&w=700&q=80" alt="Clean cut"></a>
+    <a class="reveal" href="#"><img src="https://images.unsplash.com/photo-1598524374912-6b0b0bab43dd?auto=format&fit=crop&w=700&q=80" alt="Beard work"></a>
+    <a class="g-wide reveal" href="#"><img src="https://images.unsplash.com/photo-1635273051839-003bf06a8751?auto=format&fit=crop&w=1000&q=80" alt="Straight razor line-up"></a>
+    <a class="reveal" href="#"><img src="https://images.unsplash.com/photo-1604355240616-5e907f42b431?auto=format&fit=crop&w=700&q=80" alt="Shop detail"></a>
+  </div>
+</section>
+
+<section class="section reviews">
+  <div class="wrap">
+    <div class="reveal"><div class="stars">★★★★★</div><div class="rev-agg">4.9 on Google · 200+ reviews</div></div>
+    <!-- [NEEDS] swap for real Google/Booksy review quotes; representative placeholders below -->
+    <div class="rev-grid">
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>"Been coming to VJ for years. Cleanest fade in Little Rock, every single time."</p><cite>Marcus D.</cite></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>"Booked on Booksy, in and out, sharp as ever. This is the spot on the Southside."</p><cite>Terrance B.</cite></div>
+      <div class="rev reveal"><div class="stars">★★★★★</div><p>"Ms. Shears does my son and me both. Real barbershop, always packed for a reason."</p><cite>Andre W.</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">Visit</span><h2>Grab a chair.</h2></div>
+    <div class="visit-grid">
+      <div class="reveal">
+        <div class="hours-row"><span>Monday</span><b>Closed</b></div>
+        <div class="hours-row today"><span>Tuesday – Friday</span><b>9:00a – 7:00p</b></div>
+        <div class="hours-row"><span>Saturday</span><b>9:00a – 7:00p</b></div>
+        <div class="hours-row"><span>Sunday</span><b>Closed</b></div>
+        <div class="walkin"><b>How it works</b>Book your chair on Booksy in about thirty seconds, then bring cash to the shop. Card isn't accepted at the chair.</div>
+      </div>
+      <div class="visit-info reveal">
+        <p>Find us on the Southside</p>
+        <div class="big">821 W Daisy L. Gatson<br>Bates Dr · Little Rock</div>
+        <p>Across from Philander Smith College · AR 72202</p>
+        <p>Questions?<br><a class="line" href="tel:+15013242888">(501) 324-2888</a></p>
+        <a href="#" class="btn btn-brass">Book a Chair</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="emblem">WC</span><b>World Champion Cutts</b></div>
+        <p style="max-width:34ch;font-size:14px">Little Rock's championship barbershop, across from Philander Smith College.</p>
+      </div>
+      <div class="foot-col"><h4>Shop</h4><a href="#services">Services</a><a href="#barbers">Barbers</a><a href="#shop">Our Story</a><a href="#visit">Book on Booksy</a></div>
+      <div class="foot-col"><h4>Visit</h4><a href="#visit">Hours</a><a href="#visit">Book a Chair</a><a href="#visit">Directions</a><a href="#visit">Cash Only</a></div>
+      <div class="foot-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Google</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 World Champion Cutts Barber Shop. Mockup by <a href="https://forgedigital.com">Forge Digital</a>.</span>
+      <span>Built by Forge Digital.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mmenu=document.getElementById('mmenu');
+  function set(open){ mmenu.classList.toggle('open',open); burger.setAttribute('aria-expanded',open); document.body.style.overflow=open?'hidden':''; }
+  burger.addEventListener('click',function(){ set(!mmenu.classList.contains('open')); });
+  mmenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ set(false); }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+})();
+(function(){
+  var nav=document.getElementById('nav'), last=0;
+  window.addEventListener('scroll',function(){ var y=window.pageYOffset; nav.classList.toggle('hide', y>last && y>320); last=y; },{passive:true});
+})();
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
