@@ -353,7 +353,6 @@
         </ul>
         <div class="foot">
           <a class="btn btn-light js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Get started</a>
-          <button type="button" class="pkg-toggle" id="pkgToggle" aria-expanded="false" aria-controls="bundles">🎁 See package deals, save more ↓</button>
           <p class="fine">Billed once, up front · non-refundable.</p>
         </div>
       </div>
@@ -399,7 +398,7 @@
     </div>
 
     <!-- Package deals (revealed by the Packages button) -->
-    <div class="bundles" id="bundles" hidden>
+    <div class="bundles" id="bundles">
       <div class="bundles-head">🎁 Package deals: bundle and save</div>
       <div class="bundle-grid">
         <div class="bundle-card">
@@ -423,16 +422,6 @@
       <span>Rush build (live in ~3 days) <b>+$200</b></span>
       <span class="addons-note">Priced per project, invoiced separately.</span>
     </div>
-    <script>
-      (function(){
-        var t=document.getElementById('pkgToggle'),b=document.getElementById('bundles');
-        if(!t||!b)return;
-        t.addEventListener('click',function(){
-          if(b.hasAttribute('hidden')){b.removeAttribute('hidden');t.setAttribute('aria-expanded','true');t.innerHTML='🎁 Hide package deals ↑';b.scrollIntoView({behavior:'smooth',block:'nearest'});}
-          else{b.setAttribute('hidden','');t.setAttribute('aria-expanded','false');t.innerHTML='🎁 See package deals, save more ↓';}
-        });
-      })();
-    </script>
   </div>
 </section>
 <!-- WHO -->
