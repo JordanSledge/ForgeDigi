@@ -12,11 +12,11 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <meta property="og:title" content="Forge Digital — Websites that make local businesses money" />
 <meta property="og:description" content="$500 to build. From $99/month to keep it working. Conway, Arkansas." />
-<meta property="og:image" content="https://forgedigital.com/og.svg" />
-<meta property="og:url" content="https://forgedigital.com/" />
+<meta property="og:image" content="https://forgedigi.org/og.svg" />
+<meta property="og:url" content="https://forgedigi.org/" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="canonical" href="https://forgedigital.com/" />
+<link rel="canonical" href="https://forgedigi.org/" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <style>
   :root{
@@ -164,6 +164,32 @@
   .price-card li svg{flex:0 0 auto;margin-top:4px;color:#9DA8FF}
   .price-card .foot{margin-top:auto}
   .price-card .fine{font-size:.82rem;color:var(--on-dark-muted);margin-top:14px}
+  /* combined care plans */
+  .price-card .care-intro{color:var(--on-dark-muted);font-size:.96rem;margin:12px 0 18px}
+  .care-tiers{display:grid;gap:14px;margin-bottom:24px}
+  .care-tier{border:1px solid var(--on-dark-line);border-radius:14px;padding:18px}
+  .care-tier.feature-tier{border-color:var(--accent);background:rgba(39,67,230,.10)}
+  .care-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px}
+  .care-name{font-family:var(--display);font-weight:700;font-size:1.12rem;color:#fff}
+  .care-price{font-family:var(--display);font-weight:800;font-size:1.7rem;letter-spacing:-.02em;white-space:nowrap;color:#fff}
+  .care-price .per{font-family:var(--body);font-size:.82rem;font-weight:500;color:var(--on-dark-muted)}
+  .care-tier ul{list-style:none;display:grid;gap:9px;margin:0}
+  .care-tier li{display:flex;gap:10px;color:var(--on-dark);font-size:.92rem}
+  .care-tier li svg{flex:0 0 auto;margin-top:3px;color:#9DA8FF}
+  .pill{display:inline-block;font-family:var(--body);font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9DA8FF;border:1px solid var(--accent);border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+  /* packages toggle + bundles */
+  .pkg-toggle{display:flex;width:100%;align-items:center;gap:6px;margin:14px 0 0;background:none;border:none;color:#9DA8FF;font-family:var(--body);font-size:.92rem;font-weight:600;cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:3px}
+  .pkg-toggle:hover{color:#fff}
+  .bundles{margin-top:26px;padding:28px;border:1px solid var(--accent);border-radius:18px;background:rgba(39,67,230,.06)}
+  .bundles[hidden]{display:none}
+  .bundles-head{font-family:var(--display);font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:18px}
+  .bundle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:20px}
+  .bundle-card{background:var(--dark-2);border:1px solid var(--on-dark-line);border-radius:14px;padding:22px}
+  .bundle-card.best{border-color:var(--accent)}
+  .bundle-name{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:10px}
+  .bundle-price{font-family:var(--display);font-weight:800;font-size:1.9rem;letter-spacing:-.02em;color:#fff;margin-bottom:10px}
+  .bundle-price .was{font-size:1.05rem;font-weight:500;color:var(--on-dark-muted);text-decoration:line-through;margin-right:10px}
+  .bundle-card p{color:var(--on-dark-muted);font-size:.92rem;margin:0}
 
   /* Who + How */
   .who-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
@@ -313,6 +339,7 @@
       <p>No hidden quotes, no enterprise runaround. One fair price to build it, and a plan to keep it working.</p>
     </div>
     <div class="price-grid">
+      <!-- Card 1: The Build -->
       <div class="price-card reveal">
         <div class="tag">The build · one-time</div>
         <div class="amt">$500</div>
@@ -324,41 +351,88 @@
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Two rounds of revisions included</span></li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Live in about <b>a week</b></span></li>
         </ul>
-        <div class="foot"><a class="btn btn-light js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Get started</a><p class="fine">Billed once, up front · non-refundable.</p></div>
+        <div class="foot">
+          <a class="btn btn-light js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Get started</a>
+          <button type="button" class="pkg-toggle" id="pkgToggle" aria-expanded="false" aria-controls="bundles">🎁 See package deals, save more ↓</button>
+          <p class="fine">Billed once, up front · non-refundable.</p>
+        </div>
       </div>
+      <!-- Card 2: Care Plans (combined) -->
       <div class="price-card reveal">
-        <div class="tag">Care plan · monthly</div>
-        <div class="amt">$99<span class="per"> / month</span></div>
-        <p>Keeps your site fast, online, and handled every month.</p>
-        <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Hosting, security, and backups</b></span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Edits and updates on request</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Kept fast and online, checked weekly</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Monthly report on calls and traffic</span></li>
-        </ul>
+        <div class="tag">Care plans · monthly</div>
+        <p class="care-intro">Keep your site fast, online, and growing. Pick your level, upgrade anytime.</p>
+        <div class="care-tiers">
+          <div class="care-tier">
+            <div class="care-head"><span class="care-name">Care</span><span class="care-price">$99<span class="per">/mo</span></span></div>
+            <ul>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Hosting, security &amp; backups</b></span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Edits and updates on request</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Checked weekly, kept fast</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Monthly report on calls &amp; traffic</span></li>
+            </ul>
+          </div>
+          <div class="care-tier feature-tier">
+            <div class="care-head"><span class="care-name">Premium <span class="pill">Popular</span></span><span class="care-price">$150<span class="per">/mo</span></span></div>
+            <ul>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Everything in Care, plus:</b></span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile</b> management</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Local SEO</b> to rank in nearby searches</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Priority edits</span></li>
+            </ul>
+          </div>
+        </div>
         <div class="foot"><a class="btn btn-light js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a><p class="fine">Billed monthly · cancel anytime · no contract.</p></div>
       </div>
+      <!-- Card 3: Get Found / SEO -->
       <div class="price-card feature reveal">
-        <div class="tag">Premium care plan · monthly</div>
-        <div class="amt">$150<span class="per"> / month</span></div>
-        <p>Everything in the Care Plan, plus we grow your presence in local search.</p>
+        <div class="tag">Get found · one-time</div>
+        <div class="amt">$400</div>
+        <p><b>A website is step one. SEO is how customers actually find it.</b> We make sure you show up when someone Googles your kind of business nearby.</p>
         <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Everything in the Care Plan</b></span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile</b> setup and management</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Local SEO</b> to rank in nearby searches</span></li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Priority edits</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span><b>Google Business Profile</b> set up &amp; optimized</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Show up on <b>Google Maps</b> &amp; local search</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>A system to earn more <b>5-star reviews</b></span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span>Listed right everywhere: Yelp, Bing, Apple Maps</span></li>
         </ul>
-        <div class="foot"><a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a><p class="fine">Billed monthly · cancel anytime · no contract.</p></div>
+        <div class="foot"><a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call</a><p class="fine">One-time setup · pairs with any plan.</p></div>
       </div>
     </div>
+
+    <!-- Package deals (revealed by the Packages button) -->
+    <div class="bundles" id="bundles" hidden>
+      <div class="bundles-head">🎁 Package deals: bundle and save</div>
+      <div class="bundle-grid">
+        <div class="bundle-card">
+          <div class="bundle-name">Launch Bundle</div>
+          <div class="bundle-price"><span class="was">$900</span>$800</div>
+          <p>Website <b>+ Local SEO Launch</b>. Get online <b>and</b> get found on Google from day one.</p>
+        </div>
+        <div class="bundle-card best">
+          <div class="bundle-name">Growth Bundle <span class="pill">Best value</span></div>
+          <div class="bundle-price"><span class="was">$1,350</span>$1,150</div>
+          <p>Website + SEO Launch <b>+ 3 months Premium Care</b>. Built, found, and growing. Fully handled for your first 3 months.</p>
+        </div>
+      </div>
+      <a class="btn btn-primary js-calendly" href="https://calendly.com/jordan-forgedigital/new-meeting" target="_blank" rel="noopener">Book a call to start a bundle</a>
+    </div>
+
     <div class="addons reveal">
       <span class="addons-label">Add-ons</span>
       <span>Logo &amp; brand kit <b>$150</b></span>
       <span>Extra pages <b>$75 each</b></span>
       <span>Rush build (live in ~3 days) <b>+$200</b></span>
-      <span>Local SEO Launch (get found on Google) <b>$400</b></span>
       <span class="addons-note">Priced per project, invoiced separately.</span>
     </div>
+    <script>
+      (function(){
+        var t=document.getElementById('pkgToggle'),b=document.getElementById('bundles');
+        if(!t||!b)return;
+        t.addEventListener('click',function(){
+          if(b.hasAttribute('hidden')){b.removeAttribute('hidden');t.setAttribute('aria-expanded','true');t.innerHTML='🎁 Hide package deals ↑';b.scrollIntoView({behavior:'smooth',block:'nearest'});}
+          else{b.setAttribute('hidden','');t.setAttribute('aria-expanded','false');t.innerHTML='🎁 See package deals, save more ↓';}
+        });
+      })();
+    </script>
   </div>
 </section>
 <!-- WHO -->
